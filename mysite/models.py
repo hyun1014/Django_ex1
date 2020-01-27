@@ -6,10 +6,10 @@ class Question(models.Model):
     published_date = models.DateTimeField('when published')
 
     def __str__(self):
-        return self.published_date
+        return self.question_text
 
 
-class Choice(models.Model):
+class Several(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=30)
     vote = models.IntegerField(default=0)
